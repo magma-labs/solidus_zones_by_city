@@ -1,0 +1,5 @@
+bump:
+  recurse: false
+  file: 'lib/solidus_zones_by_city/version.rb'
+  message: Bump SolidusZonesByCity to %{version}
+  tag: true
