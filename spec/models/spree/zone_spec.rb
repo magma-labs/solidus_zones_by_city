@@ -11,11 +11,11 @@ RSpec.describe Spree::Zone do
       zone.members.create(zoneable: city)
     end
 
-    it 'should return the kind of zone member' do
+    it 'return the kind of zone member' do
       expect(zone.kind).to eq('city')
     end
 
-    context '#include?' do
+    describe '#include?' do
       let(:address) { create(:address, state: city.state, city: city) }
 
       it 'with address from city should return true' do

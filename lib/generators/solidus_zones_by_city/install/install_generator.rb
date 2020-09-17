@@ -6,8 +6,8 @@ module SolidusZonesByCity
       class_option :auto_run_migrations, type: :boolean, default: false
 
       def add_javascripts
-        append_file 'vendor/assets/javascripts/spree/frontend/all.js', "//= require spree/frontend/solidus_zones_by_city\n"
-        append_file 'vendor/assets/javascripts/spree/backend/all.js', "//= require spree/backend/solidus_zones_by_city\n"
+        append_file 'vendor/assets/javascripts/spree/frontend/all.js', "//= require spree/frontend/solidus_zones_by_city\n" # rubocop:disable Layout/LineLength
+        append_file 'vendor/assets/javascripts/spree/backend/all.js', "//= require spree/backend/solidus_zones_by_city\n" # rubocop:disable Layout/LineLength
       end
 
       def add_stylesheets

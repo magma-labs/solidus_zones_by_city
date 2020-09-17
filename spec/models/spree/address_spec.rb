@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 RSpec.describe Spree::Address, type: :model do
-  context 'associations' do
-    it { should belong_to(:city) }
+  describe 'associations' do
+    it { is_expected.to belong_to(:city) }
   end
 end

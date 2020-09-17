@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 require 'solidus_dev_support/rake_tasks'
-SolidusDevSupport::RakeTasks.install
+require 'rubocop/rake_task'
 
-task default: 'extension:specs'
+SolidusDevSupport::RakeTasks.install
+RuboCop::RakeTask.new
+
+task default: %i(rubocop extension:specs)
