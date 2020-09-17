@@ -1,10 +1,10 @@
-en:
+es:
   activerecord:
     errors:
       models:
         spree/address:
           attributes:
             city_id:
-              invalid: Select a valid city
+              invalid: Debes elegir una ciudad valida
   spree:
-    city_based: City Based
+    city_based: Basado en Ciudad
