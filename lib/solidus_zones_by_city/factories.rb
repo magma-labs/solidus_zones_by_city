@@ -17,7 +17,15 @@ end
 
 FactoryBot.modify do
   factory :address, class: 'Spree:Address' do
-    city { create(:city) }
+    transient do
+      city_name { 'Birmingham' }
+    end
+
+    city do |address|
+      state = address.state
+      Spree::City.find_by(name: city_name, state: state.id) ||
+        create(:city, name: city_name, state: state)
+    end
   end
 end
 
