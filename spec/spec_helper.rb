@@ -3,6 +3,8 @@
 # Configure Rails Environment
 ENV['RAILS_ENV'] = 'test'
 
+require 'shoulda/matchers'
+
 # Run Coverage report
 require 'solidus_dev_support/rspec/coverage'
 
@@ -27,5 +29,12 @@ RSpec.configure do |config|
 
   if Spree.solidus_gem_version < Gem::Version.new('2.11')
     config.extend Spree::TestingSupport::AuthorizationHelpers::Request, type: :system
+  end
+end
+
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
   end
 end

@@ -1,13 +1,12 @@
 # Solidus Zones By City
 
-<!-- Replace REPO_ORG and uncomment the following to show badges for CI and coverage. -->
+[![CircleCI](https://circleci.com/gh/magma-labs/solidus_zones_by_city.svg?style=shield)](https://circleci.com/gh/magma-labs/solidus_zones_by_city)
+[![codecov](https://codecov.io/gh/magma-labs/solidus_zones_by_city/branch/master/graph/badge.svg)](https://codecov.io/gh/magma-labs/solidus_zones_by_city)
 
-<!--
-[![CircleCI](https://circleci.com/gh/REPO_ORG/solidus_zones_by_city.svg?style=shield)](https://circleci.com/gh/REPO_ORG/solidus_zones_by_city)
-[![codecov](https://codecov.io/gh/REPO_ORG/solidus_zones_by_city/branch/master/graph/badge.svg)](https://codecov.io/gh/REPO_ORG/solidus_zones_by_city)
--->
+Allow city based zones.
 
-[Explain what your extension does.]
+Note: This gem change `Spree::Address` to use `Spree::City` instead a string, so
+you will need to update your frontend store accordingly
 
 ## Installation
 
