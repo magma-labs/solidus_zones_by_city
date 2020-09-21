@@ -23,7 +23,7 @@ FactoryBot.modify do
 
     city do |address|
       state = address.state
-      Spree::City.find_by(name: city_name, state: state.id) ||
+      Spree::City.find_by(name: city_name, state: state) ||
         create(:city, name: city_name, state: state)
     end
   end
