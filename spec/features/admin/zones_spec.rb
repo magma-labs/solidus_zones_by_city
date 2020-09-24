@@ -14,7 +14,10 @@ describe 'Zones admin page', type: :feature, js: true do
     fill_in 's2id_autogen3', with: city.name
     find('.select2-results li:first-child').click
     click_on('Create')
-    page.have_current_path spree.admin_zones_path
+  end
+
+  it 'redirect to admin_zones page' do
+    expect(page).to have_current_path spree.admin_zones_path
   end
 
   it 'creates city level zone' do
