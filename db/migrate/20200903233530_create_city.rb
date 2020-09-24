@@ -1,4 +1,4 @@
-class CreateCity < ActiveRecord::Migration[6.0]
+class CreateCity < ActiveRecord::Migration[5.2]
   def change
     create_table :spree_cities do |t|
       t.integer :state_id, index: true
