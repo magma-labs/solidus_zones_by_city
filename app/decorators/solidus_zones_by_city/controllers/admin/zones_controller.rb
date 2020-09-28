@@ -7,7 +7,7 @@ module SolidusZonesByCity
         private
 
         def load_data
-          @cities = Spree::City.order(:name)
+          @cities = Spree::Locality.order(:name)
           super
         end
       end

@@ -12,7 +12,7 @@ RSpec.describe Spree::Zone do
     end
 
     it 'return the kind of zone member' do
-      expect(zone.kind).to eq('city')
+      expect(zone.kind).to eq('locality')
     end
 
     describe '#include?' do
