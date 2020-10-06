@@ -9,7 +9,7 @@ module SolidusZonesByCity
         with_options through: :zone_members, source: :zoneable do
           has_many :countries, source_type: 'Spree::Country'
           has_many :states, source_type: 'Spree::State'
-          has_many :cities, source_type: 'Spree::City'
+          has_many :cities, source_type: 'Spree::Locality'
         end
       end
 
@@ -22,7 +22,7 @@ module SolidusZonesByCity
       end
 
       def city_ids
-        if kind == 'city'
+        if kind == 'locality'
           members.pluck(:zoneable_id)
         else
           []
@@ -30,7 +30,7 @@ module SolidusZonesByCity
       end
 
       def city_ids=(ids)
-        set_zone_members(ids, 'Spree::City')
+        set_zone_members(ids, 'Spree::Locality')
       end
     end
   end

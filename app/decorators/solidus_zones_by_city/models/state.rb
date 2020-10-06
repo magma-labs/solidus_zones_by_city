@@ -6,7 +6,7 @@ module SolidusZonesByCity
       extend ActiveSupport::Concern
 
       included do
-        has_many :cities, class_name: 'Spree::City', dependent: :destroy
+        has_many :localities, class_name: 'Spree::Locality', dependent: :destroy
       end
     end
   end

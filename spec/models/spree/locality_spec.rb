@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe Spree::City, type: :model do
+RSpec.describe Spree::Locality, type: :model do
   describe 'associations' do
     it { is_expected.to belong_to(:state) }
   end

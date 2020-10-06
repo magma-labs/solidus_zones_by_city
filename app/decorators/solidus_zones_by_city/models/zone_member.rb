@@ -9,8 +9,8 @@ module SolidusZonesByCity
           zoneable_id == address.country_id
         when 'Spree::State'
           zoneable_id == address.state_id
-        when 'Spree::City'
-          zoneable_id == address.city_id
+        when 'Spree::Locality'
+          zoneable_id == address.locality_id
         else
           false
         end

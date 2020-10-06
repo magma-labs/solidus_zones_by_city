@@ -4,6 +4,6 @@ require 'spec_helper'
 
 RSpec.describe Spree::State, type: :model do
   describe 'associations' do
-    it { is_expected.to have_many(:cities) }
+    it { is_expected.to have_many(:localities) }
   end
 end

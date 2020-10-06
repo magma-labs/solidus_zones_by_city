@@ -6,7 +6,7 @@ module SolidusZonesByCity
       extend ActiveSupport::Concern
 
       included do
-        belongs_to :city, class_name: 'Spree::City'
+        belongs_to :locality, class_name: 'Spree::Locality', optional: true
       end
     end
   end

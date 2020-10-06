@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
-  factory :city, class: 'Spree::City' do
+  factory :city, class: 'Spree::Locality' do
     name { 'Birmingham' }
     transient do
       country_iso_code { 'US' }
       state_code { 'AL' }
     end
 
-    state do |city|
+    state do |locality|
       Spree::State.joins(:country).where('spree_countries.iso = (?)', country_iso_code).find_by(abbr: state_code) ||
-        city.association(:state, country_iso: country_iso_code, state_code: state_code)
+        locality.association(:state, country_iso: country_iso_code, state_code: state_code)
     end
   end
 end
@@ -21,9 +21,9 @@ FactoryBot.modify do
       city_name { 'Birmingham' }
     end
 
-    city do |address|
+    locality do |address|
       state = address.state
-      Spree::City.find_by(name: city_name, state: state) ||
+      Spree::Locality.find_by(name: city_name, state: state) ||
         create(:city, name: city_name, state: state)
     end
   end
@@ -42,9 +42,9 @@ FactoryBot.modify do
         stock_location.association(:state, country_iso: country_iso_code, state_code: state_code)
     end
 
-    city do |stock_location|
+    locality do |stock_location|
       state = stock_location.state
-      Spree::City.find_by(name: city_name, state: state) ||
+      Spree::Locality.find_by(name: city_name, state: state) ||
       create(:city, name: city_name, state: state)
     end
   end

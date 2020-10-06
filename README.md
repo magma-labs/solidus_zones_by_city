@@ -5,9 +5,6 @@
 
 Allow city based zones.
 
-Note: This gem change `Spree::Address` to use `Spree::City` instead a string, so
-you will need to update your frontend store accordingly
-
 ## Installation
 
 Add solidus_zones_by_city to your Gemfile:
@@ -24,7 +21,15 @@ bin/rails generate solidus_zones_by_city:install
 
 ## Usage
 
-[Explain how to use your extension once it's been installed.]
+This gem add `Spree::Locality` model to store cities information and allow
+`Spree::Zone` to have `Spree::Locality` members.
+
+In order to match city based zones you need to use `Spree::Locality` in your
+addresses. Easy to you, this gem associate `Spree::Address` and `Spree::StockLocation`
+to use `Spree::Locality`.
+
+You only need to setup your cities information and update your frontend store
+accordingly.
 
 ## Development
 
