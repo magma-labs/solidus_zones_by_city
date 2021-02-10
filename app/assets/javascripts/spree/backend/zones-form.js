@@ -20,4 +20,11 @@ Spree.ready(function() {
       $('#city_members :input').prop('disabled', kind !== 'city');
     }
   });
+
+  if($('.js-zones-form').length) {
+    var view = new Spree.Views.Zones.Form({
+      el: $('.js-zones-form')
+    });
+    view.render()
+  }
 });
