@@ -16,8 +16,8 @@ Spree.ready(function() {
       $('#country_members').toggleClass('hidden', kind !== 'country');
       $('#country_members :input').prop('disabled', kind !== 'country');
 
-      $('#city_members').toggleClass('hidden', kind !== 'city');
-      $('#city_members :input').prop('disabled', kind !== 'city');
+      $('#city_members').toggleClass('hidden', kind !== 'locality');
+      $('#city_members :input').prop('disabled', kind !== 'locality');
     }
   });
 
