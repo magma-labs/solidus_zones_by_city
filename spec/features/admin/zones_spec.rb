@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
-
-describe 'Zones admin page', type: :feature, js: true do
+RSpec.describe 'Zones admin page', type: :feature, js: true do
   stub_authorization!
 
   let!(:city) { create(:city) }

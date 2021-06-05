@@ -24,7 +24,7 @@ FactoryBot.modify do
     locality do |address|
       state = address.state
       Spree::Locality.find_by(name: city_name, state: state) ||
-        create(:city, name: city_name, state: state)
+        create(:locality, name: city_name, state: state)
     end
   end
 end
@@ -45,7 +45,7 @@ FactoryBot.modify do
     locality do |stock_location|
       state = stock_location.state
       Spree::Locality.find_by(name: city_name, state: state) ||
-      create(:city, name: city_name, state: state)
+      create(:locality, name: city_name, state: state)
     end
   end
 end
