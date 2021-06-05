@@ -3,8 +3,6 @@
 # Configure Rails Environment
 ENV['RAILS_ENV'] = 'test'
 
-require 'shoulda/matchers'
-
 # Run Coverage report
 require 'solidus_dev_support/rspec/coverage'
 
@@ -20,8 +18,8 @@ require 'solidus_dev_support/rspec/feature_helper'
 # in spec/support/ and its subdirectories.
 Dir["#{__dir__}/support/**/*.rb"].sort.each { |f| require f }
 
-# Requires factories defined in lib/solidus_zones_by_city/factories.rb
-require 'solidus_zones_by_city/factories'
+# Requires factories defined in lib/solidus_related_products/testing_support/factories.rb
+SolidusDevSupport::TestingSupport::Factories.load_for(SolidusZonesByCity::Engine)
 
 RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
@@ -29,12 +27,5 @@ RSpec.configure do |config|
 
   if Spree.solidus_gem_version < Gem::Version.new('2.11')
     config.extend Spree::TestingSupport::AuthorizationHelpers::Request, type: :system
-  end
-end
-
-Shoulda::Matchers.configure do |config|
-  config.integrate do |with|
-    with.test_framework :rspec
-    with.library :rails
   end
 end

@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
-
 RSpec.describe Spree::Zone do
   context 'when zone is city type' do
     let(:zone) { create(:zone, name: 'CityZone') }
