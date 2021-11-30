@@ -4,7 +4,7 @@ en:
       models:
         spree/address:
           attributes:
-            city_id:
+            locality_id:
               invalid: Select a valid city
   spree:
-    city_based: City Based
+    locality_based: City Based

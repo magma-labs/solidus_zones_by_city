@@ -2,7 +2,7 @@
 
 <li>
   <label>
-    <%= zone_form.radio_button('kind', 'city', { id: 'city_based' }) %>
-    <%= t('spree.city_based') %>
+    <%= zone_form.radio_button('kind', 'locality', { id: 'locality_based' }) %>
+    <%= t('spree.locality_based') %>
   </label>
 </li>
